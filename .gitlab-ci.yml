@@ -1,13 +1,7 @@
-image: docker:latest
+image: busybox:latest
 
-services:
-  - docker:dind
-
-build:
+build1:
   stage: build
   script:
     - echo $CI_COMMIT_SHA
     - make build
-  only:
-    - master
-
