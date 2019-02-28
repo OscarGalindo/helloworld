@@ -6,7 +6,7 @@ services:
 build:
   stage: build
   script:
-    - echo $CI_COMMIT_REF_SLUG
+    - echo $CI_COMMIT_SHA
     - make build
   only:
     - master
