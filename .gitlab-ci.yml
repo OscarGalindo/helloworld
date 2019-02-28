@@ -1,0 +1,13 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+build:
+  stage: build
+  script:
+    - echo $CI_COMMIT_REF_SLUG
+    - make build
+  only:
+    - master
+
