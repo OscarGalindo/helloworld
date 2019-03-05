@@ -1,9 +1,8 @@
 pipeline {
   agent {
     node {
-      label 'docker'
+      label 'build'
     }
-
   }
   stages {
     stage('build') {
@@ -12,11 +11,13 @@ pipeline {
         sh 'make build'
       }
     }
+
     stage('staging') {
       steps {
         sh 'ENV=staging make deploy'
       }
     }
+
     stage('prod') {
       steps {
         sh 'ENV=prod make deploy'
