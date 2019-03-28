@@ -1,4 +1,5 @@
 FROM node
+
 RUN mkdir /app
 COPY package.json /app
 
